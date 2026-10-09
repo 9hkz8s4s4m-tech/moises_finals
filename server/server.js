@@ -7,7 +7,13 @@ const Student = require("./models/Student");
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+const parseJsonBody = express.json();
+app.use((req, res, next) => {
+  if (req.body !== undefined) {
+    return next();
+  }
+  parseJsonBody(req, res, next);
+});
 
 let connectionPromise;
 
