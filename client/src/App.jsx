@@ -80,7 +80,7 @@ function App() {
     const student = { name: name.trim(), course: course.trim(), age: Number(age) };
     try {
       if (editingId) {
-        await axios.put(`${API}/${editingId}`, student);
+        await axios.put(API, student, { params: { id: editingId } });
         setMessage({ type: "success", text: `${student.name}’s record has been updated.` });
       } else {
         await axios.post(API, student);
@@ -114,7 +114,7 @@ function App() {
     setDeletingId(student._id);
     setMessage(null);
     try {
-      await axios.delete(`${API}/${student._id}`);
+      await axios.delete(API, { params: { id: student._id } });
       setMessage({ type: "success", text: `${student.name}’s record has been deleted.` });
       await getStudents();
     } catch (error) {

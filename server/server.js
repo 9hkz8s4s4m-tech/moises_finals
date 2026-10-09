@@ -90,10 +90,14 @@ app.post("/students", async (req, res) => {
   }
 });
 
-app.put("/students/:id", async (req, res) => {
+app.put(["/students", "/students/:id"], async (req, res) => {
   try {
+    const studentId = req.params.id || req.query.id;
+    if (!mongoose.isValidObjectId(studentId)) {
+      return res.status(400).json({ message: "A valid student ID is required" });
+    }
     const student = await Student.findByIdAndUpdate(
-      req.params.id,
+      studentId,
       req.body,
       { new: true, runValidators: true }
     );
@@ -107,9 +111,13 @@ app.put("/students/:id", async (req, res) => {
   }
 });
 
-app.delete("/students/:id", async (req, res) => {
+app.delete(["/students", "/students/:id"], async (req, res) => {
   try {
-    const student = await Student.findByIdAndDelete(req.params.id);
+    const studentId = req.params.id || req.query.id;
+    if (!mongoose.isValidObjectId(studentId)) {
+      return res.status(400).json({ message: "A valid student ID is required" });
+    }
+    const student = await Student.findByIdAndDelete(studentId);
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
