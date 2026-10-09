@@ -1,0 +1,16 @@
+# Dependencies and build output
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and local-only files
+*.log
+*.local
+.DS_Store
+Thumbs.db

@@ -1,0 +1,227 @@
+.app-shell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header {
+  padding: 20px;
+  background: #dcecff;
+  text-align: center;
+}
+
+.brand-mark,
+.eyebrow,
+.step-number {
+  display: none;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  color: #222;
+  font-size: 30px;
+}
+
+.header-description {
+  margin: 0;
+}
+
+.content {
+  padding: 16px;
+}
+
+.card {
+  margin-bottom: 18px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+  color: #222;
+  font-size: 21px;
+}
+
+.section-heading p {
+  margin: 0;
+}
+
+.student-count {
+  margin-left: auto;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 12px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.field input {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background: white;
+  color: #222;
+  font: inherit;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.button {
+  padding: 7px 12px;
+  border: 1px solid #888;
+  border-radius: 2px;
+  color: #222;
+  background: #eee;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-primary {
+  color: white;
+  border-color: #2462a0;
+  background: #3178bd;
+}
+
+.button-danger {
+  color: #9d1717;
+  background: #fff;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.form-hint {
+  margin: 0;
+}
+
+.notice {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #999;
+  background: #f4f4f4;
+}
+
+.notice-success {
+  color: #175c25;
+}
+
+.notice-error {
+  color: #8d1717;
+}
+
+.notice-dismiss {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.list-state,
+.empty-state {
+  padding: 16px;
+  border: 1px solid #ccc;
+}
+
+.list-state {
+  text-align: center;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-icon {
+  display: none;
+}
+
+.empty-state h3 {
+  margin: 0 0 6px;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 9px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background: #eee;
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+footer {
+  padding: 12px;
+  color: #555;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .content {
+    padding: 10px;
+  }
+
+  .form-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-wrap: wrap;
+  }
+
+  .student-count {
+    margin-left: 0;
+  }
+
+  th,
+  td {
+    padding: 7px;
+  }
+
+  .row-actions {
+    flex-direction: column;
+  }
+}
